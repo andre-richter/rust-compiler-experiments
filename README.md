@@ -2,7 +2,8 @@
 
 ## Can I use Traits to generate inlined, monomorphized code?
 
-Looks like yes. Only the function implementation will need an inline attribute:
+Looks like yes. Only the function implementation will need an `#[inline(always)]` attribute.
+`#[inline]` does not seem to be enough (Details on Godbolt link).
 ```rust
 pub trait Get {
     fn get();
